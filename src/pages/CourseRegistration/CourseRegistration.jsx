@@ -1,13 +1,38 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
+import { Modal } from "antd";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const courseList = [
-  { id: 1, name: "Web Development" },
-  { id: 2, name: "Data Structures" },
-  { id: 3, name: "Operating Systems" },
-  { id: 4, name: "Database Systems" },
+  {
+    id: 1,
+    name: "Web Development",
+    syllabus: "HTML, CSS, JavaScript, React",
+    credits: 3,
+    prerequisites: "None",
+  },
+  {
+    id: 2,
+    name: "Data Structures",
+    syllabus: "Arrays, Linked Lists, Trees",
+    credits: 4,
+    prerequisites: "Programming Basics",
+  },
+  {
+    id: 3,
+    name: "Operating Systems",
+    syllabus: "Processes, Threads, Memory Management",
+    credits: 3,
+    prerequisites: "Computer Architecture",
+  },
+  {
+    id: 4,
+    name: "Database Systems",
+    syllabus: "SQL, NoSQL, Transactions",
+    credits: 3,
+    prerequisites: "None",
+  },
 ];
 
 const CourseRegistration = () => {
@@ -18,6 +43,8 @@ const CourseRegistration = () => {
     studentId: "",
   });
   const [errors, setErrors] = useState({});
+  const [courseDetails, setCourseDetails] = useState(null); // For showing course details
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleChange = (e) => {
     setFormData({
@@ -33,6 +60,14 @@ const CourseRegistration = () => {
     } else {
       setSelectedCourses(selectedCourses.filter((id) => id !== courseId));
     }
+  };
+
+  const showCourseDetails = (course) => {
+    setCourseDetails(course);
+  };
+
+  const closeCourseDetails = () => {
+    setCourseDetails(null);
   };
 
   const validate = () => {
@@ -52,10 +87,8 @@ const CourseRegistration = () => {
 
     if (Object.keys(formErrors).length === 0) {
       try {
-        // Simulate API call (replace with actual API call)
         await new Promise((resolve) => setTimeout(resolve, 500));
 
-        // Log the submitted form data to the console
         console.log("Form Data:", formData);
         console.log("Selected Courses:", selectedCourses);
 
@@ -139,6 +172,13 @@ const CourseRegistration = () => {
                   checked={selectedCourses.includes(course.id)}
                 />
                 <label className="ml-2">{course.name}</label>
+                <button
+                  className="ml-4 text-blue-500 hover:underline"
+                  type="button"
+                  onClick={() => showCourseDetails(course)}
+                >
+                  View Details
+                </button>
               </div>
             ))}
             {errors.courses && (
@@ -153,6 +193,26 @@ const CourseRegistration = () => {
             Submit
           </button>
         </form>
+
+        {/* Modal for course details */}
+        {courseDetails && (
+          <Modal
+            visible={!!courseDetails}
+            onCancel={closeCourseDetails}
+            footer={null}
+            title={`Course Details: ${courseDetails.name}`}
+          >
+            <p>
+              <strong>Syllabus:</strong> {courseDetails.syllabus}
+            </p>
+            <p>
+              <strong>Credits:</strong> {courseDetails.credits}
+            </p>
+            <p>
+              <strong>Prerequisites:</strong> {courseDetails.prerequisites}
+            </p>
+          </Modal>
+        )}
 
         {/* React Toastify Container */}
         <ToastContainer />

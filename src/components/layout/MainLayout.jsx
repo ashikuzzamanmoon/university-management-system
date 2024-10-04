@@ -35,6 +35,7 @@ const MainLayout = () => {
         trigger={null}
         collapsible
         collapsed={collapsed}
+        onCollapse={setCollapsed}
         breakpoint="lg"
         collapsedWidth="0"
         style={{
