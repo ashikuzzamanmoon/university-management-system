@@ -24,7 +24,6 @@ const MainLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
 
-  // Determine the active menu item based on the current URL
   const activeKey =
     items.find((item) => location.pathname === item.label.props.to)?.key ||
     "Student Dashboard";
@@ -44,24 +43,22 @@ const MainLayout = () => {
           left: 0,
           top: 0,
           bottom: 0,
-        }} // Sidebar fixed
+        }}
       >
         <div />
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={[activeKey]} // Set the active menu item
+          defaultSelectedKeys={[activeKey]}
           items={items}
         />
       </Sider>
       <Layout style={{ marginLeft: collapsed ? "0" : "20px" }}>
-        {" "}
-        {/* Adjust margin when collapsed */}
         <Header
           style={{
-            position: "fixed", // Header fixed
+            position: "fixed",
             top: 0,
-            left: collapsed ? "0" : "200px", // Adjust position when collapsed
+            left: collapsed ? "0" : "200px",
             right: 0,
             zIndex: 1,
             padding: 0,
@@ -92,11 +89,11 @@ const MainLayout = () => {
         </Header>
         <Content
           style={{
-            marginTop: "76px", // Offset for the fixed header
-            marginLeft: collapsed ? "0" : "200px", // Adjust margin for sidebar
+            marginTop: "76px",
+            marginLeft: collapsed ? "0" : "200px",
             padding: "24px",
-            overflowY: "auto", // Only Content scrolls
-            height: "calc(100vh - 64px)", // Content height minus the header
+            overflowY: "auto",
+            height: "calc(100vh - 64px)",
             background: "#fff",
             borderRadius: "8px",
           }}

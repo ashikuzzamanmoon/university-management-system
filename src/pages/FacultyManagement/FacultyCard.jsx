@@ -2,7 +2,6 @@
 import { useState } from "react";
 
 const FacultyCard = ({ faculty }) => {
-  // Destructure faculty properties inside the component body
   const { name, designation, subject, officeHours, contact } = faculty;
   const [showDetails, setShowDetails] = useState(false);
 

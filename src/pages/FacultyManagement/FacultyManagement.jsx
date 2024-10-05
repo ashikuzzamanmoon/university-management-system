@@ -5,29 +5,52 @@ import FacultyCard from "./FacultyCard";
 const facultyData = [
   {
     id: 1,
-    name: "Prof. John Smith",
+    name: "Prof. Abul Malek",
     designation: "Associate Professor",
     subject: "Web Development",
-    officeHours: "MWF 9-11 AM",
+    officeHours: "Monday, Wednesday, Friday 9-11 AM",
     contact: "johnsmith@university.edu",
   },
   {
     id: 2,
-    name: "Prof. Jane Doe",
+    name: "Prof. Abdul Jolil",
     designation: "Professor",
     subject: "Data Structures",
-    officeHours: "TTh 10-12 PM",
+    officeHours: "Tuesday, Thursday 10-12 PM",
     contact: "janedoe@university.edu",
   },
   {
     id: 3,
-    name: "Prof. Mark Lee",
+    name: "Prof. Mokhlesur Rahman",
     designation: "Assistant Professor",
     subject: "Operating Systems",
-    officeHours: "MWF 1-3 PM",
+    officeHours: "Monday, Wednesday, Friday 1-3 PM",
     contact: "marklee@university.edu",
   },
-  // Add more faculty members here
+  {
+    id: 4,
+    name: "Prof. Fatema Begum",
+    designation: "Lecturer",
+    subject: "Database Management",
+    officeHours: "Monday, Wednesday, Friday 2-4 PM",
+    contact: "fatema.begum@university.edu",
+  },
+  {
+    id: 5,
+    name: "Prof. Zakir Hossain",
+    designation: "Senior Lecturer",
+    subject: "Software Engineering",
+    officeHours: "Tuesday, Thursday 9-11 AM",
+    contact: "zakir.hossain@university.edu",
+  },
+  {
+    id: 6,
+    name: "Prof. Nilufa Akter",
+    designation: "Assistant Professor",
+    subject: "Artificial Intelligence",
+    officeHours: "Monday, Wednesday, Friday 11 AM - 1 PM",
+    contact: "nilufa.akter@university.edu",
+  },
 ];
 
 const FacultyManagement = () => {

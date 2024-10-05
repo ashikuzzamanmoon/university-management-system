@@ -43,7 +43,7 @@ const CourseRegistration = () => {
     studentId: "",
   });
   const [errors, setErrors] = useState({});
-  const [courseDetails, setCourseDetails] = useState(null); // For showing course details
+  const [courseDetails, setCourseDetails] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleChange = (e) => {

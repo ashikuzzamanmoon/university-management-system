@@ -1,22 +1,22 @@
 const StudentDashboard = () => {
   const studentData = {
-    name: "John Doe",
+    name: "Ashikuzzaman Moon",
     studentId: "123456",
     courses: [
       {
         name: "Web Development",
         grade: "A",
-        info: "Course taught by Prof. Smith",
+        info: "Course taught by Prof. Abul Malek",
       },
       {
         name: "Data Structures",
         grade: "B",
-        info: "Course taught by Prof. Johnson",
+        info: "Course taught by Prof. Abdul Jolil",
       },
       {
         name: "Operating Systems",
         grade: "A-",
-        info: "Course taught by Prof. Lee",
+        info: "Course taught by Prof. Mokhlesur Rahman",
       },
     ],
     upcomingEvents: ["Orientation: September 15", "Midterm Exams: October 10"],
